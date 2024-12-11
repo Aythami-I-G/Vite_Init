@@ -20,7 +20,7 @@ void checkNodeVersion() {
     if (fgets(command, sizeof(command), fp) != NULL) {
         printf("Node.js version: %s", command);
     } else {
-        printf("Node.Js is not installed. Download Node.Js from the main web page https://nodejs.org/en/download/prebuilt-installer.\n");
+        printf("Node.Js is not installed. Download Node.Js from the main web page https://nodejs.org/en/download/prebuilt-installer. \n");
     }
 
     pclose(fp);
