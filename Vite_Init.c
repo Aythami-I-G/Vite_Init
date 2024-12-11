@@ -1,5 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
+#ifdef _WIN32
+#include <io.h>
+#define access _access
+#else
+#include <unistd.h>
+#endif
 
 //Functions
 void checkNodeVersion() {
@@ -35,10 +42,8 @@ void checkNPMVersion() {
     pclose(fp);
 }
 
-void createVite() {
-    char name[100];
+void createVite(char *name) {
     char vitecommand[256];
-//    char cdcommand[256];
 
     // Get the project name from the user
     printf("Enter the project name: ");
@@ -68,11 +73,30 @@ void createVite() {
         return;
 }  
 
-// Main Function
+void installVite(const char *name) {
+    // Chenge folder using chdir (cd command doesnt work)
+    if (chdir(name) == 0) {
+        printf("Changed directory to: %s\n", name);
+
+        // Install the React project using npm install
+        printf("Running 'npm install'...\n");
+        int result = system("npm install");
+
+        if (result == 0) {
+            printf("'npm install' completed successfully.\n");
+        } else {
+            printf("An error occurred while running 'npm install'.\n");
+        }
+    } else {
+        perror("Failed to change directory");
+    }
+}
 
 int main() {
+    char name[100];
     checkNodeVersion();
     checkNPMVersion();
-    createVite();
+    createVite(name);
+    installVite(name);
     return 0;
 }
