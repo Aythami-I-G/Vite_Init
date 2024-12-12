@@ -74,7 +74,7 @@ void createVite(char *name) {
 }  
 
 void installVite(const char *name) {
-    // Chenge folder using chdir (cd command doesnt work)
+    // Change folder using chdir (cd command doesnt work)
     if (chdir(name) == 0) {
         printf("Changed directory to: %s\n", name);
 
@@ -89,6 +89,22 @@ void installVite(const char *name) {
         }
     } else {
         perror("Failed to change directory");
+    }
+}
+
+    //Installing NPM packages
+void installNpm(const char *name) {
+    if (chdir(name) == 0) {
+        printf("DO you want to install ''");
+        int result = system("npm install");
+
+        if (result == 0) {
+            printf("Installing NPM dependencies\n");
+        } else {
+            printf("An error ocurred while 'NPM dependencies' was installed.\n");
+        }
+    } else {
+        perror("Failed to change install ''");
     }
 }
 
