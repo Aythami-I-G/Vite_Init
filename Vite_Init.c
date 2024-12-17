@@ -90,23 +90,182 @@ void installVite(const char *name) {
     } else {
         perror("Failed to change directory");
     }
-}
 
+}
     //Installing NPM packages
-void installNpm(const char *name) {
-    if (chdir(name) == 0) {
-        printf("DO you want to install ''");
-        int result = system("npm install");
+        
+        //Axios 
+        void installAxios(const char *name) {
+            if (chdir(name) == 0) {
+            printf("Changed directory to: %s\n", name);
 
-        if (result == 0) {
-            printf("Installing NPM dependencies\n");
+            // Install the React project using npm install
+            printf("Installing 'Axios'. \n");
+            int result = system("npm i axios");
+
+            if (result == 0) {
+                printf("'Axios' successfully installed.\n");
+            } else {
+                printf("An error ocurred, 'axios' installation has failed.\n");
+            }
         } else {
-            printf("An error ocurred while 'NPM dependencies' was installed.\n");
+            perror("Failed to change directory");
+            }
         }
-    } else {
-        perror("Failed to change install ''");
-    }
-}
+
+        //React Router Dom
+                void installRouter(const char *name) {
+            if (chdir(name) == 0) {
+                printf("DO you want to install 'React-router-dom@6'");
+                int result = system("npm install react-router-dom@6");
+
+                if (result == 0) {
+                    printf
+                            ("Installing react-router-dom@6\n");
+                } else {
+                    printf("An error ocurred, 'React Router Dom' installation has failed.\n");
+                }
+            } else {
+                perror("Failed to change directory");
+            }
+                return;
+        }
+        //Express
+                void installExpress(const char *name) {
+            if (chdir(name) == 0) {
+                printf("DO you want to install 'express'");
+                int result = system("npm install express");
+
+                if (result == 0) {
+                    printf("Installing express\n");
+                } else {
+                    printf("An error ocurred, 'express' installation has failed.\n");
+                }
+            } else {
+                perror("Failed to change directory");
+
+            }
+                return;
+        }
+        //Morgan
+                void installMorgan(const char *name) {
+            if (chdir(name) == 0) {
+                printf("DO you want to install 'morgan'");
+                int result = system("npm install morgan");
+
+                if (result == 0) {
+                    printf("Installing morgan\n");
+                } else {
+                    printf("An error ocurred, 'morgan' installation has failed.\n");
+                }
+            } else {
+                perror("Failed to change directory");
+
+            }
+                return;
+        }
+        //Json-server
+                        void installServer(const char *name) {
+            if (chdir(name) == 0) {
+                printf("DO you want to install 'json-server'");
+                int result = system("npm install json-server");
+
+                if (result == 0) {
+                    printf("Installing json-server\n");
+                } else {
+                    printf("An error ocurred, 'Json-server' installation has failed.\n");
+                }
+            } else {
+                perror("Failed to change directory");
+
+            }
+                return;
+        }
+        //Jsonwebtoken
+                void installWebToken(const char *name) {
+            if (chdir(name) == 0) {
+                printf("DO you want to install 'jsonwebtoken'");
+                int result = system("npm install jsonwebtoken");
+
+                if (result == 0) {
+                    printf("Installing jsonwebtoken\n");
+                } else {
+                    printf("An error ocurred, 'Jsonwebtoken' installation has failed.\n");
+                }
+            } else {
+                perror("Failed to change directory");
+
+            }
+                return;
+        }
+        //Sequelize
+                void installSequelize(const char *name) {
+            if (chdir(name) == 0) {
+                printf("DO you want to install 'sequelize'");
+                int result = system("npm install sequelize");
+
+                if (result == 0) {
+                    printf("Installing sequlize\n");
+                } else {
+                    printf("An error ocurred, 'sequelize' installation has failed.\n");
+                }
+            } else {
+                perror("Failed to change directory");
+
+            }
+                return;
+        }
+        //cors
+                void installCors(const char *name) {
+            if (chdir(name) == 0) {
+                printf("DO you want to install 'cors'");
+                int result = system("npm install cors");
+
+                if (result == 0) {
+                    printf("Installing cors\n");
+                } else {
+                    printf("An error ocurred, 'cors' installation has failed.\n");
+                }
+            } else {
+                perror("Failed to change directory");
+
+            }
+                return;
+        }
+        //Proptipes
+                void installProptipes(const char *name) {
+            if (chdir(name) == 0) {
+                printf("DO you want to install 'proptipes'");
+                int result = system("npm install proptipes");
+
+                if (result == 0) {
+                    printf("Installing proptipes depencies\n");
+                } else {
+                    printf("An error ocurred, 'proptipes' installation has failed.\n");
+                }
+            } else {
+                perror("Failed to change directory");
+
+            }
+                return;
+        }
+        //Perttier
+                        void installPrettier(const char *name) {
+            if (chdir(name) == 0) {
+                printf("DO you want to install 'prettier'");
+                int result = system("npm install prettier");
+
+                if (result == 0) {
+                    printf("Installing Prettier depencies\n");
+                } else {
+                    printf("An error ocurred, 'prettier' installation has failed.\n");
+                }
+            } else {
+                perror("Failed to change directory");
+
+            }
+                return;
+        } 
 
 int main() {
     char name[100];
@@ -114,5 +273,15 @@ int main() {
     checkNPMVersion();
     createVite(name);
     installVite(name);
+    installAxios(name);
+    installCors(name);
+    installExpress(name);
+    installMorgan(name);
+    installPrettier(name);
+    installProptipes(name);
+    installRouter(name);
+    installSequelize(name);
+    installServer(name);
+    installWebToken(name); 
     return 0;
 }
