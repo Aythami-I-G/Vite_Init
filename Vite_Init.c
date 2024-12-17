@@ -90,7 +90,7 @@ void installVite(const char *name) {
     } else {
         perror("Failed to change directory");
     }
-
+        return;
 }
     //Installing NPM packages
         
@@ -111,8 +111,8 @@ void installVite(const char *name) {
         } else {
             perror("Failed to change directory");
             }
+            return;
         }
-
         //React Router Dom
                 void installRouter(const char *name) {
             if (chdir(name) == 0) {
@@ -120,8 +120,7 @@ void installVite(const char *name) {
                 int result = system("npm install react-router-dom@6");
 
                 if (result == 0) {
-                    printf
-                            ("Installing react-router-dom@6\n");
+                    printf("Installing react-router-dom@6\n");
                 } else {
                     printf("An error ocurred, 'React Router Dom' installation has failed.\n");
                 }
