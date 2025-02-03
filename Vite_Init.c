@@ -95,25 +95,18 @@ void installVite(const char *name) {
     //Installing NPM packages
         
         //Axios 
-        void installAxios(const char *name) {
-            if (chdir(name) == 0) {
-            printf("Changed directory to: %s\n", name);
-
-            // Install the React project using npm install
-            printf("Installing 'Axios'. \n");
+        void installAxios(){
+            // Install the Axios project using npm install
+           printf("Installing 'Axios'. \n");
             int result = system("npm i axios");
-
             if (result == 0) {
                 printf("'Axios' successfully installed.\n");
             } else {
                 printf("An error ocurred, 'axios' installation has failed.\n");
             }
-        } else {
-            perror("Failed to change directory");
-            }
             return;
         }
-        //React Router Dom
+/*        //React Router Dom
                 void installRouter(const char *name) {
             if (chdir(name) == 0) {
                 printf("DO you want to install 'React-router-dom@6'");
@@ -264,16 +257,16 @@ void installVite(const char *name) {
 
             }
                 return;
-        } 
+        } */
 
 int main() {
-    char name[100];
+    char name[256];
     checkNodeVersion();
     checkNPMVersion();
     createVite(name);
     installVite(name);
     installAxios(name);
-    installCors(name);
+  /*  installCors(name);
     installExpress(name);
     installMorgan(name);
     installPrettier(name);
@@ -281,6 +274,6 @@ int main() {
     installRouter(name);
     installSequelize(name);
     installServer(name);
-    installWebToken(name); 
+    installWebToken(name); */
     return 0;
 }
