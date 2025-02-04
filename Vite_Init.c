@@ -106,158 +106,114 @@ void installVite(const char *name) {
             }
             return;
         }
-/*        //React Router Dom
-                void installRouter(const char *name) {
-            if (chdir(name) == 0) {
-                printf("DO you want to install 'React-router-dom@6'");
-                int result = system("npm install react-router-dom@6");
-
-                if (result == 0) {
-                    printf("Installing react-router-dom@6\n");
-                } else {
-                    printf("An error ocurred, 'React Router Dom' installation has failed.\n");
-                }
+        //React Router Dom
+        void installRouter(){
+            // Install the React Router Dom project using npm install 
+            printf("Installing 'react-router-dom'. \n");
+            int result = system("npm i react-router-dom");
+            if (result == 0) {
+                printf("'react-router-dom' successfully installed.\n");
             } else {
-                perror("Failed to change directory");
+                printf("An error ocurred, 'react-router-dom' installation has failed.\n");
             }
-                return;
+            return;
         }
         //Express
-                void installExpress(const char *name) {
-            if (chdir(name) == 0) {
-                printf("DO you want to install 'express'");
-                int result = system("npm install express");
-
-                if (result == 0) {
-                    printf("Installing express\n");
-                } else {
-                    printf("An error ocurred, 'express' installation has failed.\n");
-                }
+                void installExpress(){
+            // Install the Express project using npm install
+            printf("Installing 'express'. \n");
+            int result = system("npm i express");
+            if (result == 0) {
+                printf("'express' successfully installed.\n");
             } else {
-                perror("Failed to change directory");
-
+                printf("An error ocurred, 'express' installation has failed.\n");
             }
-                return;
+            return;
         }
         //Morgan
-                void installMorgan(const char *name) {
-            if (chdir(name) == 0) {
-                printf("DO you want to install 'morgan'");
-                int result = system("npm install morgan");
-
-                if (result == 0) {
-                    printf("Installing morgan\n");
-                } else {
-                    printf("An error ocurred, 'morgan' installation has failed.\n");
-                }
+                void installMorgan(){
+            // Install the Morgan project using npm install     
+            printf("Installing 'morgan'. \n");
+            int result = system("npm i morgan");
+            if (result == 0) {
+                printf("'morgan' successfully installed.\n");
             } else {
-                perror("Failed to change directory");
-
+                printf("An error ocurred, 'morgan' installation has failed.\n");
             }
-                return;
+            return;
         }
         //Json-server
-                        void installServer(const char *name) {
-            if (chdir(name) == 0) {
-                printf("DO you want to install 'json-server'");
-                int result = system("npm install json-server");
-
-                if (result == 0) {
-                    printf("Installing json-server\n");
-                } else {
-                    printf("An error ocurred, 'Json-server' installation has failed.\n");
-                }
+                void installServer(){
+            // Install the Json-server project using npm install    
+            printf("Installing 'json-server'. \n");
+            int result = system("npm i json-server");
+            if (result == 0) {
+                printf("'json-server' successfully installed.\n");
             } else {
-                perror("Failed to change directory");
-
+                printf("An error ocurred, 'json-server' installation has failed.\n");
             }
-                return;
+            return;
         }
         //Jsonwebtoken
-                void installWebToken(const char *name) {
-            if (chdir(name) == 0) {
-                printf("DO you want to install 'jsonwebtoken'");
-                int result = system("npm install jsonwebtoken");
-
-                if (result == 0) {
-                    printf("Installing jsonwebtoken\n");
-                } else {
-                    printf("An error ocurred, 'Jsonwebtoken' installation has failed.\n");
-                }
+                void installWebToken(){
+            // Install the Jsonwebtoken project using npm install    
+            printf("Installing 'jsonwebtoken'. \n");
+            int result = system("npm i jsonwebtoken");
+            if (result == 0) {
+                printf("'jsonwebtoken' successfully installed.\n");
             } else {
-                perror("Failed to change directory");
-
+                printf("An error ocurred, 'jsonwebtoken' installation has failed.\n");
             }
-                return;
+            return;
         }
         //Sequelize
-                void installSequelize(const char *name) {
-            if (chdir(name) == 0) {
-                printf("DO you want to install 'sequelize'");
-                int result = system("npm install sequelize");
-
-                if (result == 0) {
-                    printf("Installing sequlize\n");
-                } else {
-                    printf("An error ocurred, 'sequelize' installation has failed.\n");
-                }
+                void installSequelize(){
+            // Install the Sequelize project using npm install    
+            printf("Installing 'sequelize'. \n");
+            int result = system("npm install --save sequelize");
+            if (result == 0) {
+                printf("'sequelize' successfully installed.\n");
             } else {
-                perror("Failed to change directory");
-
+                printf("An error ocurred, 'sequelize' installation has failed.\n");
             }
-                return;
+            return;
         }
         //cors
-                void installCors(const char *name) {
-            if (chdir(name) == 0) {
-                printf("DO you want to install 'cors'");
-                int result = system("npm install cors");
-
-                if (result == 0) {
-                    printf("Installing cors\n");
-                } else {
-                    printf("An error ocurred, 'cors' installation has failed.\n");
-                }
+                void installCors(){
+            // Install the cors project using npm install    
+            printf("Installing 'cors'. \n");
+            int result = system("npm i cors");
+            if (result == 0) {
+                printf("'cors' successfully installed.\n");
             } else {
-                perror("Failed to change directory");
-
+                printf("An error ocurred, 'cors' installation has failed.\n");
             }
-                return;
+            return;
         }
-        //Proptipes
-                void installProptipes(const char *name) {
-            if (chdir(name) == 0) {
-                printf("DO you want to install 'proptipes'");
-                int result = system("npm install proptipes");
-
-                if (result == 0) {
-                    printf("Installing proptipes depencies\n");
-                } else {
-                    printf("An error ocurred, 'proptipes' installation has failed.\n");
-                }
+        //prop-types
+                void installProptypes(){
+            // Install the prop-types project using npm install    
+            printf("Installing 'prop-types'. \n");
+            int result = system("npm install --save prop-types");
+            if (result == 0) {
+                printf("'prop-types' successfully installed.\n");
             } else {
-                perror("Failed to change directory");
-
+                printf("An error ocurred, 'prop-types' installation has failed.\n");
             }
-                return;
+            return;
         }
-        //Perttier
-                        void installPrettier(const char *name) {
-            if (chdir(name) == 0) {
-                printf("DO you want to install 'prettier'");
-                int result = system("npm install prettier");
-
-                if (result == 0) {
-                    printf("Installing Prettier depencies\n");
-                } else {
-                    printf("An error ocurred, 'prettier' installation has failed.\n");
-                }
+        //Prettier
+                void installPrettier(){
+            // Install the Prettier project using npm install    
+            printf("Installing 'prettier'. \n");
+            int result = system("npm i prettier");
+            if (result == 0) {
+                printf("'prettier' successfully installed.\n");
             } else {
-                perror("Failed to change directory");
-
+                printf("An error ocurred, 'prettier' installation has failed.\n");
             }
-                return;
-        } */
+            return;
+        }
 
 int main() {
     char name[256];
@@ -266,14 +222,14 @@ int main() {
     createVite(name);
     installVite(name);
     installAxios(name);
-  /*  installCors(name);
+    installRouter(name);
     installExpress(name);
     installMorgan(name);
-    installPrettier(name);
-    installProptipes(name);
-    installRouter(name);
-    installSequelize(name);
     installServer(name);
-    installWebToken(name); */
+    installWebToken(name);
+    installSequelize(name);
+    installCors(name);
+    installProptypes(name);
+    installPrettier(name);
     return 0;
 }
